@@ -59,6 +59,6 @@ describe(" Authenticate User", () => {
                 email:user.email,
                 password: "54321"
             })
-        }).toBeInstanceOf(AppError);
+        }).rejects.toBeInstanceOf(AppError);
     })
 })
