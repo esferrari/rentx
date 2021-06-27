@@ -1,4 +1,4 @@
-import { AppError } from "src/errors/AppError";
+import { AppError } from "src/shared/errors/AppError";
 import { CreateCategoryUseCase } from "src/modules/cars/UseCases/CreateCategory/CreateCategoryUseCase";
 import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
 import { UsersRepositoryInMemory } from "../../repositories/in-memory/UsersRepositoryInMemory";
