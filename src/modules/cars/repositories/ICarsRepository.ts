@@ -1,8 +1,10 @@
-import { ICreateUserDTO } from "src/modules/accounts/dtos/ICreateUserDTO";
+import { ICreateCarDTO } from "../dtos/ICreateCarDTO";
+import { Car } from "../infra/typeorm/entities/Car";
 
 
 interface ICarsRepository {
-    create(data: ICreateUserDTO): Promise<void>;
+    create(data: ICreateCarDTO): Promise<Car>;
+    findByLicensePlate(license_plate: string): Promise<Car>;
 }
 
 export { ICarsRepository}
