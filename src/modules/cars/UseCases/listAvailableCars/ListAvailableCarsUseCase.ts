@@ -1,3 +1,4 @@
+import { inject, injectable } from "tsyringe";
 import { Car } from "../../infra/typeorm/entities/Car";
 import { ICarsRepository } from "../../repositories/ICarsRepository";
 
@@ -8,9 +9,10 @@ interface IRequest {
     name?:string;
 }
 
-
-class ListCarsUseCAse {
+injectable()
+class ListAvailableCarsUseCAse {
     constructor(
+        @inject("CarsREpository")
         private carsRepository: ICarsRepository
     ){}
     async execute({category_id,name,brand}:  IRequest): Promise<Car[]> {
@@ -20,4 +22,4 @@ class ListCarsUseCAse {
     }
 }
 
-export { ListCarsUseCAse }
+export { ListAvailableCarsUseCAse }
