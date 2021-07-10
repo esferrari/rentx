@@ -8,12 +8,12 @@ import { ICarsRepository } from "../ICarsRepository";
 class CarsRepositoryInMemory implements ICarsRepository {
     
     cars: Car[] = [];
-    async create(data: ICreateCarDTO): Promise<Car> {
+    async create({brand,category_id,daily_rate,description,fine_amount,name,license_plate,id}: ICreateCarDTO): Promise<Car> {
         const car = new Car();
 
-        Object.assign(car,{
-            data
-        })
+        Object.assign(car,
+            {brand,category_id,daily_rate,description,fine_amount,name,license_plate,id}
+        )
 
         this.cars.push(car);
 
